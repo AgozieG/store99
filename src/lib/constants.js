@@ -1,0 +1,4 @@
+export const CATEGORIES=['shirts','shorts','trousers','hoodies','shoes','accessories'];
+export const CATEGORY_LABELS={shirts:'Shirts',shorts:'Shorts',trousers:'Trousers',hoodies:'Hoodies',shoes:'Shoes',accessories:'Accessories'};
+export const CATEGORY_IMAGES={shirts:'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=900',shorts:'https://images.unsplash.com/photo-1591195853828-11db59a44f43?w=900',trousers:'https://images.unsplash.com/photo-1542272604-787c3835535d?w=900',hoodies:'https://images.unsplash.com/photo-1556821840-3a63f15732ce?w=900',shoes:'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=900',accessories:'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=900'};
+export const HERO_IMAGE='https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=1800';

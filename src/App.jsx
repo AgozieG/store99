@@ -1,0 +1,21 @@
+import { HashRouter,Routes,Route,Navigate } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
+import { AuthProvider } from './context/AuthContext';
+import { CartProvider } from './context/CartContext';
+import { ThemeProvider } from './context/ThemeContext';
+import Layout from './components/Layout';
+import ProtectedRoute from './components/ProtectedRoute';
+import AdminRoute from './components/AdminRoute';
+import Home from './pages/Home';
+import Products from './pages/Products';
+import ProductDetail from './pages/ProductDetail';
+import Cart from './pages/Cart';
+import Checkout from './pages/Checkout';
+import OrderSuccess from './pages/OrderSuccess';
+import Contact from './pages/Contact';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+import Profile from './pages/Profile';
+import Admin from './pages/Admin';
+import NotFound from './pages/NotFound';
+export default function App(){return <ThemeProvider><AuthProvider><CartProvider><HashRouter future={{v7_startTransition:true,v7_relativeSplatPath:true}}><Toaster position="top-right"/><Routes><Route element={<Layout/>}><Route path="/" element={<Home/>}/><Route path="/products" element={<Products/>}/><Route path="/products/:id" element={<ProductDetail/>}/><Route path="/cart" element={<Cart/>}/><Route path="/checkout" element={<ProtectedRoute><Checkout/></ProtectedRoute>}/><Route path="/order-success" element={<ProtectedRoute><OrderSuccess/></ProtectedRoute>}/><Route path="/contact" element={<Contact/>}/><Route path="/login" element={<Login/>}/><Route path="/signup" element={<Signup/>}/><Route path="/profile" element={<ProtectedRoute><Profile/></ProtectedRoute>}/><Route path="/admin" element={<AdminRoute><Admin/></AdminRoute>}/><Route path="/404" element={<NotFound/>}/><Route path="*" element={<Navigate to="/404" replace/>}/></Route></Routes></HashRouter></CartProvider></AuthProvider></ThemeProvider>}

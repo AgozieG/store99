@@ -1,0 +1,1 @@
+export default function SkeletonCard(){return <div className="animate-pulse"><div className="aspect-[4/5] rounded-2xl bg-surface dark:bg-darksurface"/><div className="h-4 w-2/3 bg-surface dark:bg-darksurface rounded mt-4"/><div className="h-4 w-1/3 bg-surface dark:bg-darksurface rounded mt-2"/></div>}
