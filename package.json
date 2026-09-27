@@ -1,13 +1,10 @@
 {
   "name": "the-store-99",
-  "homepage": "https://AgozieG.github.io/store99",
   "private": true,
   "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "node scripts/dev.mjs",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "seed:products": "node scripts/seed-products.mjs",
     "build": "vite build",
     "preview": "vite preview"

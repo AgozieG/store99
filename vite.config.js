@@ -3,6 +3,12 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
+  base: process.env.VITE_BASE_PATH || '/',
+  build: {
+    outDir: process.env.APPDEPLOY_VITE_OUT_DIR || 'dist',
+    sourcemap: process.env.APPDEPLOY_VITE_SOURCEMAP === 'hidden' ? 'hidden' : false,
+    rollupOptions: { maxParallelFileOps: 128 },
+  },
   server: {
     proxy: {
       '/api': 'http://localhost:8787',

@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: the-store-99
+    runtime: static
+    buildCommand: npm ci && npm run build
+    staticPublishPath: ./dist
+    envVars:
+      - key: VITE_BASE_PATH
+        value: /
+      - key: VITE_SUPABASE_URL
+        sync: false
+      - key: VITE_SUPABASE_ANON_KEY
+        sync: false
+      - key: VITE_PAYSTACK_PUBLIC_KEY
+        sync: false
+      - key: VITE_WHATSAPP_NUMBER
+        sync: false
+      - key: VITE_OWNER_EMAIL
+        sync: false
+      - key: VITE_API_URL
+        sync: false
