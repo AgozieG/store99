@@ -11,7 +11,7 @@ export default function ProductCard({ product }) {
         {product.stock === 0 && <span className="absolute bottom-2 left-2 bg-red-500 px-3 py-1 text-xs font-bold text-white">Out of Stock</span>}
         {product.stock > 0 && product.stock < 5 && <span className="mono-label absolute bottom-2 left-2 border-2 border-black bg-gold px-2 py-1 text-[10px] font-bold text-black">Only {product.stock} left!</span>}
       </div>
-      <div className="flex justify-between gap-4 border-x-2 border-b-2 border-black bg-white p-3 dark:border-white dark:bg-darksurface">
+      <div className="flex justify-between gap-4 border-x-2 border-b-2 border-black bg-white p-3 text-black dark:border-white dark:bg-darksurface dark:text-white">
         <div className="min-w-0"><h3 className="truncate font-bold">{product.name}</h3><p className="mt-1 font-black text-gold">{money(product.price)}</p></div>
         <span className="grid h-9 w-9 shrink-0 place-items-center border-2 border-black bg-gold text-black transition group-hover:translate-x-1 group-hover:-translate-y-1"><ArrowUpRight size={16}/></span>
       </div>

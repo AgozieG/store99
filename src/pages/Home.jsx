@@ -80,7 +80,7 @@ export default function Home() {
 
     <section className="section-pad">
       <div className="container-x grid items-center gap-10 lg:grid-cols-2">
-        <div className="relative"><img src={CATEGORY_IMAGES.hoodies} className="aspect-[4/3] w-full border-2 border-black object-cover shadow-[6px_6px_0_#D4AF37] dark:border-white" alt="The Store 99"/><span className="mono-label absolute -bottom-4 right-4 border-2 border-black bg-gold px-3 py-2 text-xs font-bold text-black">MADE FOR THE ROTATION</span></div>
+        <div className="relative"><img src={CATEGORY_IMAGES.HOODIES} className="aspect-[4/3] w-full border-2 border-black object-cover shadow-[6px_6px_0_#D4AF37] dark:border-white" alt="The Store 99"/><span className="mono-label absolute -bottom-4 right-4 border-2 border-black bg-gold px-3 py-2 text-xs font-bold text-black">MADE FOR THE ROTATION</span></div>
         <div><p className="mono-label text-xs font-black uppercase tracking-[.2em] text-gold">About the brand / 05</p><h2 className="display mt-2 text-5xl">Built for the rotation.</h2><p className="mt-6 leading-8 text-muted">The Store 99 is a Nigerian fashion destination for clean essentials, statement pieces and footwear that can move from ordinary Tuesday to main-character Saturday without changing the plot.</p><Link to="/products" className="mt-7 inline-flex items-center gap-2 border-b-2 border-gold pb-2 font-black">Enter the collection <ArrowRight size={18}/></Link></div>
       </div>
     </section>

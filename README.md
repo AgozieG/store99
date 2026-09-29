@@ -7,7 +7,7 @@ npm install
 cp .env.example .env
 npm run dev
 
-Run `supabase/schema.sql` in the Supabase SQL Editor before using live catalog, auth, storage or checkout. Never expose `PAYSTACK_SECRET_KEY` or `SUPABASE_SERVICE_ROLE_KEY` to the browser.
+Run `supabase/schema.sql` in the Supabase SQL Editor before using live catalog, auth, storage or checkout. For an existing project, run `supabase/category_migration.sql` once to apply the current product categories. Never expose `PAYSTACK_SECRET_KEY` or `SUPABASE_SERVICE_ROLE_KEY` to the browser.
 
 ## Checkout backend
 You do not need to deploy the backend separately while developing locally. `npm run dev` starts Vite and the local API together; Vite proxies `/api/*` requests to the local API, so leave `VITE_API_URL` empty in `.env`.
