@@ -26,7 +26,7 @@ export default function Home() {
           <p className="mt-7 max-w-lg text-base text-white/85 sm:text-lg">Premium clothing & footwear built for everyday rotation, late nights and loud entrances.</p>
           <div className="mt-8 flex flex-wrap gap-4">
             <Link to="/products" className="brutal-button bg-gold px-7 py-4 font-black text-black">Shop Now <ArrowRight size={17} className="ml-2 inline"/></Link>
-            <a href="#collection" className="border-2 border-white px-7 py-4 font-bold text-white hover:bg-white hover:text-black">Explore Collection</a>
+            <button type="button" onClick={() => document.getElementById('categories')?.scrollIntoView({ behavior: 'instant', block: 'start' })} className="border-2 border-white px-7 py-4 font-bold text-white hover:bg-white hover:text-black">Explore Collection</button>
           </div>
           <div className="mono-label mt-12 flex flex-wrap gap-3 text-[10px] font-bold uppercase tracking-widest text-white/80">
             <span className="border border-white/50 px-2 py-1">Built different</span><span className="border border-white/50 px-2 py-1">Always in rotation</span><span className="border border-white/50 px-2 py-1">Lagos, Nigeria</span>
@@ -52,7 +52,7 @@ export default function Home() {
       </div>
     </section>
 
-    <section className="section-pad border-y-2 border-black bg-gold text-black dark:border-white" id="categories">
+    <section className="section-pad scroll-mt-20 border-y-2 border-black bg-gold text-black dark:border-white" id="categories">
       <div data-reveal="up" className="container-x">
         <p className="mono-label text-xs font-black uppercase tracking-[.2em]">Shop by mood / 02</p><h2 className="display mt-2 mb-8 text-5xl">Categories</h2>
         <div className="grid grid-cols-2 gap-3 lg:grid-cols-3">
