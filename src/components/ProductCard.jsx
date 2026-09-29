@@ -3,7 +3,7 @@ import { ArrowUpRight } from 'lucide-react';
 import { money } from '../lib/format';
 export default function ProductCard({ product }) {
   const img = product.product_images?.find(i => i.is_primary)?.image_url || product.product_images?.[0]?.image_url || product.image;
-  return <article className="group cursor-lift">
+  return <article data-reveal="card" className="product-card group cursor-lift">
     <Link to={'/products/' + product.id}>
       <div className="relative aspect-[4/5] overflow-hidden border-2 border-black dark:border-white bg-surface dark:bg-darksurface shadow-[4px_4px_0_#D4AF37]">
         {img && <img src={img} alt={product.name} className="h-full w-full object-cover transition duration-500 group-hover:scale-105"/>}
