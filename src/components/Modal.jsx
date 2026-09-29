@@ -1,1 +1,1 @@
-export default function Modal({ children }) { return <div className="fixed inset-0 z-[70] bg-black/60 p-4 grid place-items-center"><div className="w-full max-w-2xl max-h-[90vh] overflow-auto rounded-3xl bg-white dark:bg-darksurface p-6">{children}</div></div>; }
+export default function Modal({ children }) { return <div className="fixed inset-0 z-[70] grid place-items-center bg-black/75 p-4 backdrop-blur-sm"><div className="modal-surface brutal-panel max-h-[90vh] w-full max-w-2xl overflow-auto bg-white p-6 dark:bg-darksurface">{children}</div></div>; }

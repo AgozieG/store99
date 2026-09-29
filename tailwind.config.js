@@ -13,8 +13,9 @@ export default {
         muted: '#888',
       },
       fontFamily: {
-        sans: ['Inter', 'ui-sans-serif', 'system-ui'],
-        display: ['Inter', 'ui-sans-serif', 'system-ui'],
+        sans: ['Space Grotesk', 'ui-sans-serif', 'system-ui'],
+        display: ['Space Grotesk', 'ui-sans-serif', 'system-ui'],
+        mono: ['Space Mono', 'ui-monospace', 'monospace'],
       },
       boxShadow: { luxury: '0 18px 60px rgba(0,0,0,.12)' },
     },

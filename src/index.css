@@ -1,22 +1,146 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-:root{font-family:Inter,ui-sans-serif,system-ui,sans-serif;color-scheme:light}
-html.dark{color-scheme:dark}
-html{scroll-behavior:smooth}
-body{margin:0;min-width:320px;background:#fff;color:#111}
-.dark body{background:#0a0a0a;color:#fff}
-*{box-sizing:border-box}
-button,input,textarea,select{font:inherit}
+:root {
+  font-family: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  color-scheme: light;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --paper: #fff;
+  --paper-alt: #f5f5f5;
+  --ink: #0a0a0a;
+  --gold: #d4af37;
+  --line: rgba(10, 10, 10, .82);
+  --hard-shadow: 5px 5px 0 var(--ink);
+}
+html.dark {
+  color-scheme: dark;
+  --paper: #0a0a0a;
+  --paper-alt: #1a1a1a;
+  --ink: #fff;
+  --line: rgba(255, 255, 255, .8);
+  --hard-shadow: 5px 5px 0 var(--gold);
+}
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  min-width: 320px;
+  color: var(--ink);
+  background-color: var(--paper);
+  background-image:
+    radial-gradient(620px circle at var(--pointer-x, 50vw) var(--pointer-y, 30vh), rgba(212, 175, 55, .09), transparent 72%),
+    linear-gradient(rgba(212, 175, 55, .035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212, 175, 55, .035) 1px, transparent 1px);
+  background-size: auto, 32px 32px, 32px 32px;
+  background-attachment: fixed;
+}
+* { box-sizing: border-box; }
+button, input, textarea, select { font: inherit; }
+button, a, input, textarea, select { -webkit-tap-highlight-color: transparent; }
+button, a { transition: color .18s ease, background-color .18s ease, border-color .18s ease, box-shadow .18s ease, transform .18s ease; }
+button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
 /* Native select menus do not inherit Tailwind's dark-mode text colour reliably. */
-select option{background:#fff;color:#111}
-html.dark select option{background:#1a1a1a;color:#fff}
-::selection{background:#d4af37;color:#000}
-@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
-.gold-shimmer:hover{background-image:linear-gradient(110deg,transparent 25%,rgba(255,255,255,.45) 45%,transparent 65%);background-size:200% 100%;animation:shimmer 1s ease}
-.display{font-weight:900;letter-spacing:-.06em;line-height:.92}
-.section-pad{padding:5rem 1rem}
-.container-x{width:min(1180px,calc(100% - 2rem));margin-inline:auto}
-.no-scrollbar::-webkit-scrollbar{display:none}
-.no-scrollbar{scrollbar-width:none}
+select option { background: #fff; color: #111; }
+html.dark select option { background: #1a1a1a; color: #fff; }
+::selection { background: #d4af37; color: #000; }
+@keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+.gold-shimmer:hover { background-image: linear-gradient(110deg, transparent 25%, rgba(255,255,255,.45) 45%, transparent 65%); background-size: 200% 100%; animation: shimmer 1s ease; }
+.display {
+  font-family: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -.075em;
+  line-height: .88;
+  text-wrap: balance;
+}
+.display:not(.text-white *) {
+  text-shadow: 2px 2px 0 var(--gold);
+}
+.section-pad { padding: clamp(3.5rem, 8vw, 6.5rem) 1rem; }
+.container-x { width: min(1240px, calc(100% - 2rem)); margin-inline: auto; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }
+.brutal-panel {
+  border: 2px solid var(--line);
+  border-radius: 2px !important;
+  box-shadow: var(--hard-shadow);
+}
+.brutal-button {
+  border: 2px solid #0a0a0a;
+  border-radius: 2px !important;
+  box-shadow: 4px 4px 0 #0a0a0a;
+  font-family: 'Space Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+.brutal-button:hover:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 #0a0a0a;
+}
+.dark .brutal-button { border-color: #0a0a0a; }
+.brutal-input {
+  border: 2px solid var(--line) !important;
+  border-radius: 2px !important;
+  box-shadow: 3px 3px 0 rgba(212, 175, 55, .55);
+}
+.section-pad .rounded-3xl,
+.section-pad .rounded-2xl {
+  border: 2px solid var(--line);
+  border-radius: 2px !important;
+  box-shadow: var(--hard-shadow);
+}
+.section-pad .rounded-xl,
+.section-pad .rounded-full {
+  border-radius: 2px !important;
+}
+.section-pad input:not([type='radio']):not([type='checkbox']):not([type='range']),
+.section-pad textarea,
+.section-pad select {
+  border: 2px solid var(--line);
+  border-radius: 2px !important;
+}
+.section-pad .product-search-input {
+  border: 0 !important;
+  box-shadow: none !important;
+}
+.section-pad :is(button, a)[class~='bg-gold'] {
+  border: 2px solid #0a0a0a;
+  border-radius: 2px !important;
+  box-shadow: 4px 4px 0 #0a0a0a;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+}
+.section-pad :is(button, a)[class~='bg-gold']:hover:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 #0a0a0a;
+}
+.modal-surface input:not([type='radio']):not([type='checkbox']),
+.modal-surface textarea,
+.modal-surface select {
+  width: 100%;
+  border: 2px solid var(--line);
+  border-radius: 2px !important;
+  background: transparent;
+}
+table thead { background: var(--gold); color: #0a0a0a; font-family: 'Space Mono', monospace; text-transform: uppercase; }
+table tbody tr { transition: background-color .18s ease; }
+table tbody tr:hover { background: rgba(212, 175, 55, .1); }
+.mono-label { font-family: 'Space Mono', monospace; letter-spacing: .12em; }
+.ticker-track { font-family: 'Space Mono', monospace; }
+@media (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  body { cursor: auto; }
+  .group:hover .cursor-lift, .cursor-lift:hover { transform: translateY(-4px) rotate(-.4deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
